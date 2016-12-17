@@ -1411,6 +1411,7 @@ static int lua_cjson_new(lua_State *l)
          * this prevents overriding the table at the given
          * registry's index with a new one.
          */
+        lua_pop(l, 1);
         lua_pushlightuserdata(l, &json_empty_array);
         lua_newtable(l);
         lua_rawset(l, LUA_REGISTRYINDEX);
